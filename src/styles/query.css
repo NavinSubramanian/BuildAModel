@@ -1,0 +1,116 @@
+.quote-section {
+  padding: var(--space-xxl) 0;
+  background-color: var(--color-white);
+}
+
+.quote-form-container {
+  max-width: 800px;
+  margin: var(--space-xl) auto 0;
+  background-color: var(--color-soft-gray);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.quote-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+  color: var(--color-deep-blue);
+  font-size: 0.9375rem;
+}
+
+input, textarea {
+  padding: var(--space-sm);
+  border: 1px solid var(--color-light-gray);
+  border-radius: var(--border-radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--color-bright-teal);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 191, 166, 0.2);
+}
+
+input.error, textarea.error {
+  border-color: var(--color-error);
+}
+
+.error-message {
+  color: var(--color-error);
+  font-size: 0.875rem;
+  margin-top: var(--space-xs);
+  margin-bottom: 0;
+}
+
+.required {
+  color: var(--color-error);
+}
+
+.file-help {
+  font-size: 0.75rem;
+  color: var(--color-dark-charcoal);
+  opacity: 0.7;
+  margin-top: var(--space-xs);
+}
+
+.form-submit {
+  grid-column: 1 / -1;
+  margin-top: var(--space-sm);
+  text-align: center;
+}
+
+.form-trust {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-size: 0.875rem;
+  color: var(--color-dark-charcoal);
+  opacity: 0.8;
+  margin-top: var(--space-sm);
+}
+
+.form-trust svg {
+  color: var(--color-success);
+}
+
+.success-message {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.success-message h3 {
+  color: var(--color-success);
+  margin-bottom: var(--space-md);
+  font-size: 1.5rem;
+}
+
+.success-message p {
+  margin-bottom: var(--space-lg);
+  font-size: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .quote-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

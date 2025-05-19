@@ -1,0 +1,173 @@
+.hero {
+  padding-top: 80px;
+  /* background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%); */
+  position: relative;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://img.freepik.com/free-vector/gold-ornament-leaf-pattern-background_1409-1135.jpg');
+  background-size: 100px;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+/* .hero:after {
+  content: '';
+  position: absolute;
+  right: -15%;
+  bottom: -30%;
+  width: 60%;
+  height: 80%;
+  background-color: #C7D2FE;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: 1;
+} */
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  padding: 0 40px;
+  grid-template-columns: 1fr;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-tagline {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+.hero-title {
+  font-size: 4.2rem;
+  line-height: 1.1;
+}
+
+.hero-title span {
+  color: #F97316;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: var(--color-neutral-700);
+  max-width: 55ch;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+}
+
+.btn-outline{
+  color: var(--color-deep-blue);
+}
+
+.hero-image-container {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  transform-origin: center;
+}
+
+.hero-image-container:hover .hero-image {
+  transform: scale(1.03);
+}
+
+
+.testimonialMainText{
+  text-align: center;
+  margin: 25px 0 25px 0;
+}
+
+.testimonials-carousel {
+  position: relative;
+  max-width: 550px;
+  color: black;
+  margin: 0 auto;
+}
+
+.testimonial-item {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.testimonial-item.active {
+  opacity: 1;
+  position: relative;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-md);
+  gap: var(--space-xs);
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.309);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.5ms;
+}
+
+.indicator.active {
+  background-color: #333;
+}
+
+
+
+
+/* Responsive */
+
+@media (min-width: 768px) {
+  .testimonials-carousel {
+    flex: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+  }
+  
+  .hero-title {
+    font-size: 5.2rem;
+  }
+  
+  .hero-content {
+    padding-right: 2.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 70px;
+  }
+}

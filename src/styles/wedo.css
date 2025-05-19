@@ -1,0 +1,120 @@
+.whatWeDo{
+  background-color: var(--color-soft-gray);
+  margin-top: 20px;
+  padding-top: 30px;
+}
+.whatWeDo>div{
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.servicesGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.card{
+  height: 230px;
+  width: 370px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.card::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  left: 50%; 
+  transform: translateX(-50%);
+  transition: 0.4s;
+}
+
+.card:hover::after{
+  width: 80%;
+}
+
+.icon-style{
+  color: white;
+}
+.icon-wrapper {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 9999px;
+  display: inline-flex;
+}
+
+.card p{
+  font-size: 14px;
+  word-spacing: 4px;
+}
+
+.card[data-color="orange"]::after { background-color: #f97066; }
+.card[data-color="blue"]::after { background-color: #0074e4; }
+.card[data-color="teal"]::after { background-color: #4db6ac; }
+.card[data-color="purple"]::after { background-color: #9c27b0; }
+.card[data-color="green"]::after { background-color: #2e7d32; }
+.card[data-color="amber"]::after { background-color: #ff9800; }
+
+.card[data-color="orange"] .icon-wrapper{
+  background-color: #f97066;
+}
+.card[data-color="orange"] h3{
+  font-size: 16px;
+  color: #f97066 !important;
+}
+
+.card[data-color="blue"] .icon-wrapper{
+  background-color: #0074e4;
+}
+.card[data-color="blue"] h3{
+  color: #0074e4 !important;
+  font-size: 16px;
+}
+
+.card[data-color="teal"] .icon-wrapper{
+  background-color: #4db6ac;
+}
+.card[data-color="teal"] h3{
+  color: #4db6ac !important;
+  font-size: 16px;
+}
+
+.card[data-color="purple"] .icon-wrapper{
+  background-color: #9c27b0;
+}
+.card[data-color="purple"] h3{
+  font-size: 16px;
+  color: #9c27b0 !important;
+}
+
+.card[data-color="green"] .icon-wrapper{
+  background-color: #2e7d32;
+}
+.card[data-color="green"] h3{
+  font-size: 16px;
+  color: #2e7d32 !important;
+}
+
+.card[data-color="amber"] .icon-wrapper{
+  background-color: #ff9800;
+}
+.card[data-color="amber"] h3{
+  font-size: 16px;
+  color: #ff9800 !important;
+}
