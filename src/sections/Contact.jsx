@@ -14,21 +14,21 @@ const Contact = () => {
                 <span><Phone /></span>
                 <div>
                     <h5>Contact</h5>
-                    <h6>+91 9003060042</h6>
+                    <p>+91 9003060042</p>
                 </div>
             </div>
             <div className='leftContactBlock'>
                 <span><Mail /></span>
                 <div>
                     <h5>Email</h5>
-                    <h6>info@help.com</h6>
+                    <p>info@help.com</p>
                 </div>
             </div>
             <div className='leftContactBlock'>
                 <span><MapPinHouse /></span>
                 <div>
                     <h5>Our Address</h5>
-                    <h6>37 San Juan Lane Graaf Florisstraat 22A,3021 CH</h6>
+                    <p>37 San Juan Lane Graaf Florisstraat 22A,3021 CH</p>
                 </div>
             </div>
         </div>

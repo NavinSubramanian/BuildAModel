@@ -1,0 +1,122 @@
+.process-section {
+  background-color: var(--color-soft-gray);
+  padding: 30px 0;
+}
+
+.process-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: var(--space-xl) 0;
+}
+
+.process-step {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-lg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: var(--space-lg);
+  z-index: 2;
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-bright-teal);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step-icon {
+  color: var(--color-deep-blue);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-sm);
+}
+
+.process-step h3 {
+  text-align: center;
+  margin-bottom: var(--space-sm);
+}
+
+.process-step p {
+  text-align: center;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.process-connector {
+  display: none;
+}
+
+.process-cta {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .process-steps {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1000px;
+    margin: var(--space-xl) auto;
+  }
+  
+  .process-step {
+    margin-bottom: 0;
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .process-connector {
+    display: block;
+    flex: 0.5;
+    position: relative;
+    height: 100px;
+    margin-top: var(--space-xl);
+  }
+  
+  .connector-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--color-bright-teal);
+  }
+  
+  .connector-line::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 10px solid var(--color-bright-teal);
+  }
+}
+
+@media (min-width: 1024px) {
+  .process-step {
+    padding: var(--space-xl);
+  }
+}

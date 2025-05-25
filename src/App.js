@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Hero from './sections/Hero';
 import WeDo from './sections/WeDo';
+import HowWorks from './sections/HowWorks';
+import WhyUs from './sections/WhyUs';
 
 function App() {
   return (
@@ -57,8 +59,8 @@ function App() {
         <main>
           <Hero />
           <WeDo />
-          {/* Why Choose Us */}
-          {/* How it Works */}
+          <WhyUs />
+          <HowWorks />
           <Project />
           <Pricing />
           <Query />

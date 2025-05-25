@@ -114,3 +114,14 @@ input.error, textarea.error {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+@media screen and (max-width:500px) {
+  input{
+    width: 100%;
+  }
+  .quote-form-container{
+    padding: 30px;
+    width: 100%;
+  }
+}

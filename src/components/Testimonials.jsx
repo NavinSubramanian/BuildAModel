@@ -4,7 +4,7 @@ import '../styles/others.css';
 
 const Testimonial = ({ text, author, role, image }) => {
   return (
-    <div className="testimonial">
+    <>
       <div className="testimonial-content">
         <p className="testimonial-text">{text}</p>
         <div className="testimonial-author">
@@ -17,7 +17,7 @@ const Testimonial = ({ text, author, role, image }) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

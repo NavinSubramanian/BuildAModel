@@ -20,19 +20,6 @@
   z-index: 0;
 }
 
-/* .hero:after {
-  content: '';
-  position: absolute;
-  right: -15%;
-  bottom: -30%;
-  width: 60%;
-  height: 80%;
-  background-color: #C7D2FE;
-  border-radius: 50%;
-  opacity: 0.2;
-  z-index: 1;
-} */
-
 .hero-container {
   position: relative;
   z-index: 2;
@@ -53,7 +40,7 @@
 }
 
 .hero-title {
-  font-size: 4.2rem;
+  font-size: clamp(2.8rem, 6vw, 4.2rem);
   line-height: 1.1;
 }
 
@@ -99,41 +86,47 @@
 }
 
 .testimonials-carousel {
-  position: relative;
-  max-width: 550px;
-  color: black;
+  max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 20px 0;
 }
 
 .testimonial-item {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.5;
+  transform: scale(0.9);
+  width: 300px;
 }
 
 .testimonial-item.active {
   opacity: 1;
-  position: relative;
+  transform: scale(1.1);
 }
 
 .carousel-indicators {
   display: flex;
   justify-content: center;
-  margin-top: var(--space-md);
-  gap: var(--space-xs);
+  margin-top: 1rem;
+  gap: 0.5rem;
 }
 
 .indicator {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.309);
+  background-color: rgba(0, 0, 0, 0.3);
   border: none;
   cursor: pointer;
-  transition: background-color 0.5ms;
 }
 
 .indicator.active {
@@ -145,13 +138,8 @@
 
 /* Responsive */
 
-@media (min-width: 768px) {
-  .testimonials-carousel {
-    flex: 1;
-  }
-}
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .hero-container {
     grid-template-columns: 1.5fr 1fr;
     align-items: center;
@@ -169,5 +157,23 @@
 @media (min-width: 1024px) {
   .hero-title {
     font-size: 70px;
+  }
+}
+
+@media (max-width: 936px) {
+  .testimonial-track {
+    overflow-x: hidden;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 10px 0;
+  }
+
+  .carousel-indicators {
+    gap: 8px;
+  }
+
+  .indicator {
+    width: 12px;
+    height: 12px;
   }
 }

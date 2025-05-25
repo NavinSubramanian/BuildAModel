@@ -118,3 +118,19 @@
   font-size: 16px;
   color: #ff9800 !important;
 }
+
+
+@media screen and (max-width:1200px) {
+  .servicesGrid{
+    grid-template-columns: 1fr 1fr;
+  }
+  .card{
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width:550px) {
+  .servicesGrid{
+    grid-template-columns: 1fr;
+  }
+}

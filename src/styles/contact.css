@@ -35,3 +35,20 @@
     margin-bottom: 0px;
     margin-top: 5px;
 }
+.leftContactBlock>div>p{
+    font-size: 12px;
+}
+
+@media screen and (max-width:990px) {
+    .contactSection{
+        flex-direction: column;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (max-width:615px) {
+    .rightContact iframe{
+        width: 400px !important;
+        height: 200px;
+    }
+}

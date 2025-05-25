@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import "../styles/hero.css";
 import HeroImage from "../images/hero.jpg";
@@ -34,6 +34,8 @@ const testimonials = [
 
 const Hero = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const testimonialRefs = useRef([]);
+  const trackRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -41,6 +43,24 @@ const Hero = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    const activeItem = testimonialRefs.current[activeTestimonial];
+
+    if (track && activeItem) {
+      const itemOffset = activeItem.offsetLeft;
+      const itemWidth = activeItem.offsetWidth;
+      const containerWidth = track.offsetWidth;
+
+      const scrollTo = itemOffset - containerWidth / 2 + itemWidth / 2;
+
+      track.scrollTo({
+        left: scrollTo,
+        behavior: "smooth",
+      });
+    }
+  }, [activeTestimonial]);
 
   return (
     <>
@@ -79,22 +99,26 @@ const Hero = () => {
       <h2 className="testimonialMainText">
         Don't Belive Us? Hear from our clients!
       </h2>
+
       <div className="testimonials-carousel">
-        {testimonials.map((testimonial, index) => (
-          <div
-            key={testimonial.id}
-            className={`testimonial-item ${
-              index === activeTestimonial ? "active" : ""
-            }`}
-          >
-            <Testimonial
-              text={testimonial.text}
-              author={testimonial.author}
-              role={testimonial.role}
-              image={testimonial.image}
-            />
-          </div>
-        ))}
+        <div className="testimonial-track">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={testimonial.id}
+              ref={(el) => (testimonialRefs.current[index] = el)}
+              className={`testimonial-item ${
+                index === activeTestimonial ? "active" : ""
+              }`}
+            >
+              <Testimonial
+                text={testimonial.text}
+                author={testimonial.author}
+                role={testimonial.role}
+                image={testimonial.image}
+              />
+            </div>
+          ))}
+        </div>
 
         <div className="carousel-indicators">
           {testimonials.map((_, index) => (
