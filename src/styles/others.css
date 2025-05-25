@@ -292,6 +292,18 @@ a:hover::after {
   }
 }
 
+@media screen and (max-width:550px) {
+  .header.scrolled{
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 0 20px;
+  }
+}
+
 /* Testimonial Section */
 
 .testimonial {
