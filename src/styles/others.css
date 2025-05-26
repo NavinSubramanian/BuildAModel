@@ -365,3 +365,41 @@ a:hover::after {
   margin: 0;
   opacity: 0.8;
 }
+
+
+
+.testimonial-swiper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.testimonial-slide {
+  opacity: 0.5;
+  transform: scale(0.9);
+  width: 300px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-slide-active {
+  opacity: 1 !important;
+  transform: scale(1.05) !important;
+}
+
+@media screen and (max-width:768px) {
+  .testimonial-swiper{
+    max-width: 500px;
+  }
+
+  .swiper-slide-active{
+    transform: none !important;
+  }
+  
+  .testimonial-slide{
+    padding: 0 20px;
+
+  }
+}

@@ -2,7 +2,10 @@ import React, { useEffect, useState, useRef } from "react";
 
 import "../styles/hero.css";
 import HeroImage from "../images/hero.jpg";
+
 import Testimonial from "../components/Testimonials";
+import TestimonialCarousel from "../components/TestimonialCarousel";
+
 import FadeInSection from "../framer/FadeInSection";
 
 // Testimonial data
@@ -31,38 +34,17 @@ const testimonials = [
     image:
       "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=150",
   },
+  {
+    id: 4,
+    text: "Their modeling service exceeded our expectations in every way.",
+    author: "Lena G.",
+    role: "Creative Director",
+    image:
+      "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150",
+  },
 ];
 
 const Hero = () => {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const testimonialRefs = useRef([]);
-  const trackRef = useRef(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const track = trackRef.current;
-    const activeItem = testimonialRefs.current[activeTestimonial];
-
-    if (track && activeItem) {
-      const itemOffset = activeItem.offsetLeft;
-      const itemWidth = activeItem.offsetWidth;
-      const containerWidth = track.offsetWidth;
-
-      const scrollTo = itemOffset - containerWidth / 2 + itemWidth / 2;
-
-      track.scrollTo({
-        left: scrollTo,
-        behavior: "smooth",
-      });
-    }
-  }, [activeTestimonial]);
-
   return (
     <>
       <section className="hero" id="hero">
@@ -86,7 +68,10 @@ const Hero = () => {
             </div>
           </FadeInSection>
 
-          <FadeInSection animationType="slide-left" className="hero-image-container">
+          <FadeInSection
+            animationType="slide-left"
+            className="hero-image-container"
+          >
             <img
               src={HeroImage}
               alt="3D modeling example"
@@ -103,37 +88,7 @@ const Hero = () => {
       </FadeInSection>
 
       <FadeInSection animationType="slide-up" className="testimonials-carousel">
-        <div className="testimonial-track">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={testimonial.id}
-              ref={(el) => (testimonialRefs.current[index] = el)}
-              className={`testimonial-item ${
-                index === activeTestimonial ? "active" : ""
-              }`}
-            >
-              <Testimonial
-                text={testimonial.text}
-                author={testimonial.author}
-                role={testimonial.role}
-                image={testimonial.image}
-              />
-            </div>
-          ))}
-        </div>
-
-        <div className="carousel-indicators">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              className={`indicator ${
-                index === activeTestimonial ? "active" : ""
-              }`}
-              onClick={() => setActiveTestimonial(index)}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
-        </div>
+        <TestimonialCarousel testimonials={testimonials} />
       </FadeInSection>
     </>
   );
