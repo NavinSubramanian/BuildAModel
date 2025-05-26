@@ -7,6 +7,11 @@ import {
   Handshake,
   ArrowRightIcon,
 } from "lucide-react";
+import {
+  MotionWrapper,
+  cardVariants,
+  testimonialVariants,
+} from "../framer/animation";
 
 import "../styles/whyus.css";
 
@@ -34,14 +39,13 @@ const features = [
 ];
 
 const WhyUs = () => {
+  useEffect(() => {
+    const wrappers = document.querySelectorAll(".card-wrapper");
 
-    useEffect(() => {
-    const wrappers = document.querySelectorAll('.card-wrapper');
+    wrappers.forEach((wrapper) => {
+      const card = wrapper.querySelector(".feature-card, .testimonial-card");
 
-    wrappers.forEach(wrapper => {
-      const card = wrapper.querySelector('.feature-card, .testimonial-card');
-
-      wrapper.addEventListener('mousemove', (e) => {
+      wrapper.addEventListener("mousemove", (e) => {
         const rect = wrapper.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
@@ -49,13 +53,13 @@ const WhyUs = () => {
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
-        const rotateX = ((y - centerY) / centerY) * 8;  // max 8deg
+        const rotateX = ((y - centerY) / centerY) * 8; // max 8deg
         const rotateY = ((x - centerX) / centerX) * -8;
 
         card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
       });
 
-      wrapper.addEventListener('mouseleave', () => {
+      wrapper.addEventListener("mouseleave", () => {
         card.style.transform = `rotateX(0deg) rotateY(0deg)`;
       });
     });
@@ -68,8 +72,16 @@ const WhyUs = () => {
       <div className="features-grid">
         <div className="features-inner">
           {features.map((feature, index) => (
-            <div className="card-wrapper">
-              <div className="feature-card" key={index}>
+            <MotionWrapper.div
+              className="card-wrapper"
+              key={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+              custom={index}
+              variants={cardVariants}
+            >
+              <div className="feature-card">
                 <feature.icon
                   className="feature-icon"
                   size={40}
@@ -78,10 +90,16 @@ const WhyUs = () => {
                 <h3 className="feature-title">{feature.title}</h3>
                 <p className="feature-description">{feature.description}</p>
               </div>
-            </div>
+            </MotionWrapper.div>
           ))}
         </div>
-        <div className="testimonial-card">
+        <MotionWrapper.div
+          className="testimonial-card"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={testimonialVariants}
+        >
           <div className="testimonial-icon">
             <Rocket size={25} strokeWidth={1.5} />
           </div>
@@ -103,7 +121,7 @@ const WhyUs = () => {
           <button className="btn">
             See our Portfolio <ArrowRightIcon />
           </button>
-        </div>
+        </MotionWrapper.div>
       </div>
     </section>
   );

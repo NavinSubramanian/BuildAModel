@@ -7,8 +7,14 @@ import {
   ShieldCheck,
   Wrench,
 } from "lucide-react";
+import {
+  MotionWrapper,
+  containerVariants,
+  cardVariants2,
+} from "../framer/animation";
 
 import "../styles/wedo.css";
+import FadeInSection from "../framer/FadeInSection";
 
 const services = [
   {
@@ -59,7 +65,7 @@ const WeDo = () => {
   return (
     <section className="whatWeDo" id="what-we-do">
       <div>
-        <div className="whatdohead">
+        <FadeInSection animationType="slide-right" className="whatdohead">
           <h2>What We Do</h2>
           <p>
             We specialize in turning your ideas into tangible reality. Whether
@@ -67,18 +73,31 @@ const WeDo = () => {
             create high-quality digital 3D models and physical prototypes
             tailored to your needs.
           </p>
-        </div>
-        <div className="servicesGrid">
-          {services.map(({ title, description, icon: Icon, dataColor }) => (
-            <div key={title} className="card" data-color={`${dataColor}`}>
-              <div className="icon-wrapper">
-                <Icon className="icon-style" strokeWidth={1.5} size={20}/>
-              </div>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </div>
-          ))}
-        </div>
+        </FadeInSection>
+        <MotionWrapper.div
+          className="servicesGrid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          {services.map(
+            ({ title, description, icon: Icon, dataColor }, index) => (
+              <MotionWrapper.div
+                key={title}
+                className="card"
+                data-color={`${dataColor}`}
+                variants={cardVariants2}
+              >
+                <div className="icon-wrapper">
+                  <Icon className="icon-style" strokeWidth={1.5} size={20} />
+                </div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </MotionWrapper.div>
+            )
+          )}
+        </MotionWrapper.div>
       </div>
     </section>
   );

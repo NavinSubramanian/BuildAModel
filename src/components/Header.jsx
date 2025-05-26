@@ -3,7 +3,7 @@ import { Menu } from "lucide-react";
 
 import "../styles/others.css";
 
-import MobileMenu from "./MobileMenu";
+import MobileMenu from "../framer/MobileMenu";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
