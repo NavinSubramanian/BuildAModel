@@ -40,7 +40,7 @@ const Query = () => {
     if (validateForm()) {
       try {
         const response = await fetch(
-          "https://script.google.com/macros/s/AKfycbynXeimIQ2RoMWOTNYcZgnKQMNWC1_7hiWgsqK0bRI/exec",
+          "https://script.google.com/macros/s/AKfycbw1MaKWDucXV-jLuw22BOadhLQBM4_B6_LuWM3YvbCVj-zV95yh1EyncMTTbXYj5TnB/exec",
           {
             method: "POST",
             body: JSON.stringify({

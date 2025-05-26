@@ -59,10 +59,10 @@ const Hero = () => {
               crafted with accuracy and delivered fast.
             </p>
             <div className="hero-cta">
-              <a href="#" className="btn btn-primary">
+              <a href="#quote" className="btn btn-primary">
                 Request a Quote
               </a>
-              <a href="#" className="btn btn-outline">
+              <a href="#portfolio" className="btn btn-outline">
                 View Portfolio
               </a>
             </div>
