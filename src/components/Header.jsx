@@ -3,6 +3,8 @@ import { Menu } from "lucide-react";
 
 import "../styles/others.css";
 
+import MobileMenu from "./MobileMenu";
+
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileNavClicked, setIsMobileNavClicked] = useState(false);
@@ -79,75 +81,7 @@ const Header = () => {
           </div>
         </div>
 
-        {isMobileNavClicked ? (
-          <div className="mobile-menu">
-            <nav>
-              <ul className="mobile-nav-links">
-                <li>
-                  <a
-                    href="#"
-                    className="mobile-nav-link"
-                    onClick={() => setIsMobileNavClicked(false)}
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#what-we-do"
-                    className="mobile-nav-link"
-                    onClick={() => setIsMobileNavClicked(false)}
-                  >
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#how-it-works"
-                    className="mobile-nav-link"
-                    onClick={() => setIsMobileNavClicked(false)}
-                  >
-                    Process
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#reviews"
-                    className="mobile-nav-link"
-                    onClick={() => setIsMobileNavClicked(false)}
-                  >
-                    Reviews
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="mobile-nav-link"
-                    onClick={() => setIsMobileNavClicked(false)}
-                  >
-                    Portfolio
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="btn btn-primary"
-                    onClick={() => setIsMobileNavClicked(false)}
-                  >
-                    Get Quote
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <div className="mobile-menu-footer">
-              <p>
-                © {new Date().getFullYear()} BuildAModel. All rights reserved.
-              </p>
-            </div>
-          </div>
-        ) : (
-          <></>
-        )}
+        <MobileMenu isOpen={isMobileNavClicked} onClose={() => setIsMobileNavClicked(false)} />
       </div>
     </header>
   );

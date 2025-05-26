@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "../styles/hero.css";
 import HeroImage from "../images/hero.jpg";
 import Testimonial from "../components/Testimonials";
+import FadeInSection from "../framer/FadeInSection";
 
 // Testimonial data
 const testimonials = [
@@ -66,8 +67,7 @@ const Hero = () => {
     <>
       <section className="hero" id="hero">
         <div className="hero-container">
-          <div className="hero-content">
-            {/* <p className="hero-tagline">Professional 3D Modeling Services</p> */}
+          <FadeInSection className="hero-content">
             <h1 className="hero-title">
               Build Your Vision with Precision{" "}
               <span>3D Modeling & Printing</span>
@@ -84,23 +84,25 @@ const Hero = () => {
                 View Portfolio
               </a>
             </div>
-          </div>
+          </FadeInSection>
 
-          <div className="hero-image-container">
+          <FadeInSection animationType="slide-left" className="hero-image-container">
             <img
               src={HeroImage}
               alt="3D modeling example"
               className="hero-image"
             />
-          </div>
+          </FadeInSection>
         </div>
       </section>
 
-      <h2 className="testimonialMainText">
-        Don't Belive Us? Hear from our clients!
-      </h2>
+      <FadeInSection animationType="slide-up">
+        <h2 className="testimonialMainText">
+          Don't Belive Us? Hear from our clients!
+        </h2>
+      </FadeInSection>
 
-      <div className="testimonials-carousel">
+      <FadeInSection animationType="slide-up" className="testimonials-carousel">
         <div className="testimonial-track">
           {testimonials.map((testimonial, index) => (
             <div
@@ -132,7 +134,7 @@ const Hero = () => {
             />
           ))}
         </div>
-      </div>
+      </FadeInSection>
     </>
   );
 };
