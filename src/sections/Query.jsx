@@ -50,7 +50,7 @@ const Query = () => {
       }
 
       try {
-        const response = await fetch("http://localhost:5000/submit-form", {
+        const response = await fetch("https://bam-backend-blue.vercel.app/submit-form", {
           method: "POST",
           body: formData,
         });
