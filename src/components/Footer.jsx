@@ -1,46 +1,72 @@
-import React from 'react'
-import { Instagram, Facebook, Twitter } from 'lucide-react';
+import React from "react";
+import { Instagram, Facebook, Twitter } from "lucide-react";
 
-import '../styles/others.css'
+import MainLogo from "../images/MainLogoWhite.png";
+import "../styles/others.css";
 
 const Footer = () => {
   return (
-    <footer className='mainFooter'>
-        <div className='mainFooterWrapper'>
-            <div className='leftFooter'>
-                <div className='socialSide'>
-                    <img className='mainLogo' src="https://www.logoai.com/oss/icons/2021/12/02/SU8HhT2n6tL-p-_.png" alt="" />
-                    <p>We are committed to providing <br />personalized industrial solutions.</p>
-                    <div>
-                        <Instagram />
-                        <Facebook />
-                        <Twitter />
-                    </div>
-                </div>
-                <div className='linksWrapper'>
-                    <div>
-                        <h4>Quick Links</h4>
-                        <p>Home</p>
-                        <p>Services</p>
-                        <p>Portfolio</p>
-                        <p>Pricing</p>
-                        <p>Contact</p>
-                    </div>
-                    <div>
-                        <h4>Contact Us</h4>
-                        <p>123 Model Lane Design City, State</p>
-                        <p><b>Email: </b>contact@buildamodel.com</p>
-                        <p><b>Phone: </b>+91 12345 67890</p>
-                    </div>
-                </div>
+    <footer className="mainFooter">
+      <div className="mainFooterWrapper">
+        <div className="leftFooter">
+          <div className="socialSide">
+            <img className="mainLogo" src={MainLogo} alt="" />
+            <p>
+              We are committed to providing <br />
+              personalized industrial solutions.
+            </p>
+            <div>
+              <a
+                href="https://www.instagram.com/buildamodel"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram />
+              </a>
+              <a
+                href="https://www.facebook.com/buildamodel"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook />
+              </a>
+              <a
+                href="https://twitter.com/buildamodel"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter />
+              </a>
             </div>
-            <hr />
-            <div className='rightFooter'>
-                <p>© 2025 BuildaModel — All rights reserved</p>
+          </div>
+          <div className="linksWrapper">
+            <div>
+              <h4>Quick Links</h4>
+              <a href="#hero">Home</a>
+              <a href="#what-we-do">Services</a>
+              <a href="#portfolio">Portfolio</a>
+              <a href="#pricing">Pricing</a>
+              <a href="#contact">Contact</a>
             </div>
+            <div>
+              <h4>Contact Us</h4>
+              <p>123 Model Lane Design City, State</p>
+              <p>
+                <b>Email: </b>contact@buildamodel.com
+              </p>
+              <p>
+                <b>Phone: </b>+91 12345 67890
+              </p>
+            </div>
+          </div>
         </div>
+        <hr />
+        <div className="rightFooter">
+          <p>© 2025 BuildaModel — All rights reserved</p>
+        </div>
+      </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

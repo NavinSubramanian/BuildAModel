@@ -126,7 +126,8 @@ const Project = () => {
         <MotionWrapper.div
           variants={containerStagger}
           initial="hidden"
-          whileInView="visible"
+          animate="visible" 
+          key={filter} 
           viewport={{ once: true, amount: 0.3 }}
           className="portfolio-grid"
         >

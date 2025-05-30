@@ -27,10 +27,7 @@ const Pricing = () => {
               {index === 0 && (
                 <div className="pricing-card">
                   <div className="pricing-header">
-                    <h3>Basic Modeling</h3>
-                    <p className="pricing-amount">
-                      Starting at <span>$149</span>
-                    </p>
+                    <h3>Standard Model</h3>
                     <p className="pricing-description">
                       Perfect for simple projects with basic requirements
                     </p>
@@ -65,47 +62,6 @@ const Pricing = () => {
                 <div className="pricing-card featured">
                   <div className="pricing-badge">Popular</div>
                   <div className="pricing-header">
-                    <h3>Professional</h3>
-                    <p className="pricing-amount">
-                      Starting at <span>$299</span>
-                    </p>
-                    <p className="pricing-description">
-                      Ideal for detailed projects requiring precision
-                    </p>
-                  </div>
-                  <ul className="pricing-features">
-                    <li>
-                      <Check size={18} />
-                      <span>Detailed 3D modeling</span>
-                    </li>
-                    <li>
-                      <Check size={18} />
-                      <span>High-quality printing</span>
-                    </li>
-                    <li>
-                      <Check size={18} />
-                      <span>Three revision rounds</span>
-                    </li>
-                    <li>
-                      <Check size={18} />
-                      <span>Multiple file formats</span>
-                    </li>
-                    <li>
-                      <Check size={18} />
-                      <span>3-5 day delivery</span>
-                    </li>
-                  </ul>
-                  <div className="pricing-cta">
-                    <a href="#quote" className="btn btn-primary">
-                      Get Quote
-                    </a>
-                  </div>
-                </div>
-              )}
-
-              {index === 2 && (
-                <div className="pricing-card">
-                  <div className="pricing-header">
                     <h3>Enterprise</h3>
                     <p className="pricing-amount">Custom Pricing</p>
                     <p className="pricing-description">
@@ -136,6 +92,40 @@ const Pricing = () => {
                     <li>
                       <Check size={18} />
                       <span>Volume discounts</span>
+                    </li>
+                  </ul>
+                  <div className="pricing-cta">
+                    <a href="#quote" className="btn btn-primary">
+                      Get Quote
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {index === 2 && (
+                <div className="pricing-card">
+                  <div className="pricing-header">
+                    <h3>Free Consultations</h3>
+                    <p className="pricing-description">
+                      Assesing your projects and providing feedbacks
+                    </p>
+                  </div>
+                  <ul className="pricing-features">
+                    <li>
+                      <Check size={18} />
+                      <span>Free of charge</span>
+                    </li>
+                    <li>
+                      <Check size={18} />
+                      <span>Can be done in your said time</span>
+                    </li>
+                    <li>
+                      <Check size={18} />
+                      <span>Immediate consultation</span>
+                    </li>
+                    <li>
+                      <Check size={18} />
+                      <span>Helpful feedbacks to you</span>
                     </li>
                   </ul>
                   <div className="pricing-cta">

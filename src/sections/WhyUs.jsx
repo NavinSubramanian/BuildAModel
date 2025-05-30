@@ -66,7 +66,7 @@ const WhyUs = () => {
   }, []);
 
   return (
-    <section className="why-choose-us">
+    <section className="why-choose-us" id="why-us">
       <h2 className="section-title">Quality, Speed & Precision — Built In</h2>
 
       <div className="features-grid">

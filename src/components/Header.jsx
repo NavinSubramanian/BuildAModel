@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
 
+import MainLogo from "../images/MainLogo.png"
 import "../styles/others.css";
 
 import MobileMenu from "../framer/MobileMenu";
@@ -26,18 +27,7 @@ const Header = () => {
     <header className={`header ${scrolled ? "scrolled" : ""}`} id="header">
       <div className="header-container">
         <a href="#" className="logo">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M12 2v8m0 0 4-4m-4 4L8 6m12 6h-8m0 0 4 4m-4-4 4-4m-12 6v-4m0 8h8m0 0-4-4m4 4-4 4m-4-8v8" />
-          </svg>
-          <span>BuildAModel</span>
+          <img className="mainLogo" src={MainLogo} alt="" />
         </a>
 
         <nav className="nav-desktop">

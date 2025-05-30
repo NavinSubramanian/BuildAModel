@@ -32,28 +32,46 @@
 .socialSide div svg {
   color: white;
   border: 1px solid white;
-  padding: 3px;
+  margin: 3px;
+  padding: 4px;
   border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.socialSide div svg:hover{
+  background-color: white;
+  color: #333;
 }
 
 .linksWrapper {
   display: flex;
   column-gap: 50px;
 }
-.linksWrapper p {
+.linksWrapper div{
+  display: flex;
+  flex-direction: column;
+}
+.linksWrapper p, .linksWrapper a {
+  color: white;
   margin-bottom: 10px;
 }
 .linksWrapper h4 {
   color: white !important;
   font-size: 18px;
 }
-.linksWrapper p {
+.linksWrapper p, .linksWrapper a {
   font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.linksWrapper div:first-child a:hover{
+  text-decoration: underline;
 }
 
 .mainLogo {
-  height: 30px;
-  width: 60px;
+  height: 50px;
+  width: 260px;
+  margin-top: 5px;
 }
 
 hr {
@@ -97,8 +115,8 @@ hr {
   }
 
   .mainLogo {
-    height: 35px;
-    width: 70px;
+    height: 40px;
+    width: 200px;
   }
 }
 
@@ -126,23 +144,6 @@ hr {
   align-items: center;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary-950);
-}
-
-.logo span {
-  color: var(--color-accent-500);
-}
-
-.logo svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: var(--space-2);
-}
 
 .nav-desktop {
   display: none;
@@ -280,14 +281,6 @@ a:hover::after {
 
   .mobile-menu-btn {
     display: none;
-  }
-
-  .logo span{
-    font-size: 2.4rem;
-  }
-  .logo svg{
-    height: 2.4rem;
-    width: 2.4rem;
   }
 }
 
