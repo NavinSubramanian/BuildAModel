@@ -38,37 +38,32 @@ const Query = () => {
     e.preventDefault();
 
     if (validateForm()) {
+      const formData = new FormData();
+      formData.append("name", formState.name);
+      formData.append("email", formState.email);
+      formData.append("company", formState.company);
+      formData.append("description", formState.description);
+
+      const fileInput = document.getElementById("file");
+      if (fileInput && fileInput.files.length > 0) {
+        formData.append("file", fileInput.files[0]);
+      }
+
       try {
-        const response = await fetch(
-          "https://script.google.com/macros/s/AKfycbw1MaKWDucXV-jLuw22BOadhLQBM4_B6_LuWM3YvbCVj-zV95yh1EyncMTTbXYj5TnB/exec",
-          {
-            method: "POST",
-            body: JSON.stringify({
-              name: formState.name,
-              email: formState.email,
-              company: formState.company,
-              description: formState.description,
-              hasFile: formState.hasFile,
-            }),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const response = await fetch("http://localhost:5000/submit-form", {
+          method: "POST",
+          body: formData,
+        });
 
         const result = await response.json();
-
         if (result.success) {
-          setFormState((prev) => ({
-            ...prev,
-            submitted: true,
-          }));
+          setFormState((prev) => ({ ...prev, submitted: true }));
         } else {
-          alert("There was an error. Please try again.");
+          alert("There was an error submitting your request.");
         }
       } catch (err) {
-        console.error("Submission failed:", err);
-        alert("Network error. Please try again.");
+        console.error("Error:", err);
+        alert("Network error. Try again later.");
       }
     }
   };
