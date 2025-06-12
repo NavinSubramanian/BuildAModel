@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import "../styles/hero.css";
-import HeroImage from "../images/hero.jpg";
+import HeroImage from "../images/hero.png";
 
 import Testimonial from "../components/Testimonials";
 import TestimonialCarousel from "../components/TestimonialCarousel";
@@ -16,7 +16,7 @@ const testimonials = [
     author: "Anita R.",
     role: "Architect",
     image:
-      "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150",
+      "https://picwish.com/wp-content/uploads/2022/10/cute-discord-pfp-cat.jpg",
   },
   {
     id: 2,
@@ -24,23 +24,23 @@ const testimonials = [
     author: "Rahul M.",
     role: "Interior Designer",
     image:
-      "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=150",
+      "https://fiverr-res.cloudinary.com/videos/f_auto,q_auto,t_main1/wtfjata7jiiu6f4yd8z9/create-a-minimalist-logo-for-you.png",
   },
   {
     id: 3,
     text: "Exceptional quality and attention to detail on every model. Highly recommended!",
-    author: "Carlos B.",
+    author: "Gautham",
     role: "Product Designer",
     image:
-      "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=150",
+      "https://tr.rbxcdn.com/180DAY-3f9aceb0bb3efd1c0283638edb3f84bf/420/420/Hat/Webp/noFilter",
   },
   {
     id: 4,
     text: "Their modeling service exceeded our expectations in every way.",
-    author: "Lena G.",
+    author: "Anisha",
     role: "Creative Director",
     image:
-      "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=150",
+      "https://admin.sportshackster.com/WallPaperMedia/PlayerWallPaperImage/anime-1_63861146753944.6.jpg",
   },
 ];
 

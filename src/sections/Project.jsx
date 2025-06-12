@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { MotionWrapper, fadeInUp, containerStagger } from "../framer/animation";
 
+import DigitalMod from "../images/DigitalMod.jpg"
+import ProductProto from "../images/ProductProto.JPG"
+import ScaleModel from "../images/ScaleModel.JPG"
+import UrbanPlan from "../images/UrbanPlan.jpg"
 import "../styles/project.css";
 
 // Data
@@ -9,8 +13,7 @@ const portfolioItems = [
     id: 1,
     title: "Architectural Scale Model",
     category: "architecture",
-    image:
-      "https://images.pexels.com/photos/6444155/pexels-photo-6444155.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: ScaleModel,
     description:
       "Detailed scale model of a contemporary residential complex featuring innovative sustainable design elements.",
   },
@@ -18,8 +21,7 @@ const portfolioItems = [
     id: 2,
     title: "Product Prototype",
     category: "product",
-    image:
-      "https://images.pexels.com/photos/7234526/pexels-photo-7234526.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: ProductProto,
     description:
       "Functional prototype for an ergonomic consumer electronics device, ready for user testing and refinement.",
   },
@@ -27,8 +29,7 @@ const portfolioItems = [
     id: 3,
     title: "Urban Planning Model",
     category: "architecture",
-    image:
-      "https://images.pexels.com/photos/5367614/pexels-photo-5367614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: UrbanPlan,
     description:
       "Comprehensive city block model showing proposed development including green spaces and transit access.",
   },
@@ -37,7 +38,7 @@ const portfolioItems = [
     title: "Student Thesis Project",
     category: "student",
     image:
-      "https://images.pexels.com/photos/8412239/pexels-photo-8412239.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=1356&h=668&fit=crop",
     description:
       "Award-winning architectural thesis model exploring biomimicry in structural design.",
   },
@@ -45,8 +46,7 @@ const portfolioItems = [
     id: 5,
     title: "Before & After Digital Model",
     category: "digital",
-    image:
-      "https://images.pexels.com/photos/7149165/pexels-photo-7149165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    image: DigitalMod,
     description:
       "Visualization showing the transformation from initial concept to refined 3D model for client approval.",
   },

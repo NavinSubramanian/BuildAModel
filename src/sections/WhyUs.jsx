@@ -109,7 +109,7 @@ const WhyUs = () => {
           </p>
           <div className="testimonial-author">
             <img
-              src="https://static.vecteezy.com/system/resources/thumbnails/020/911/740/small_2x/user-profile-icon-profile-avatar-user-icon-male-icon-face-icon-profile-icon-free-png.png"
+              src="https://fiverr-res.cloudinary.com/videos/f_auto,q_auto,t_main1/wtfjata7jiiu6f4yd8z9/create-a-minimalist-logo-for-you.png"
               alt="Rahul M."
               className="author-image"
             />
