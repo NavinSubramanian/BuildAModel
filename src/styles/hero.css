@@ -6,8 +6,8 @@
   overflow: hidden;
 }
 
-@media screen and (max-width:1185px) {
-  .hero{
+@media screen and (max-width: 1185px) {
+  .hero {
     margin-top: 40px;
   }
 }
@@ -80,6 +80,8 @@
   width: 100%;
   height: auto;
   transform-origin: center;
+  position: relative;
+  top: -40px;
 }
 
 .hero-image-container:hover .hero-image {
@@ -118,7 +120,7 @@
   .hero-container {
     padding: 0 20px;
   }
-  .hero{
+  .hero {
     margin-top: 20px;
   }
 }

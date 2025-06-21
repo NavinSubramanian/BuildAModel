@@ -50,12 +50,12 @@ const Footer = () => {
             </div>
             <div>
               <h4>Contact Us</h4>
-              <p>123 Model Lane Design City, State</p>
+              <p>Iyyenchery, Urapakkam, Chennai - 603210</p>
               <p>
-                <b>Email: </b>contact@buildamodel.com
+                <b>Email: </b>buildamodel.in@gmail.com
               </p>
               <p>
-                <b>Phone: </b>+91 12345 67890
+                <b>Phone: </b>+91 87786 05741
               </p>
             </div>
           </div>

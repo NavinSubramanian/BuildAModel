@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
 import "../styles/hero.css";
-import HeroImage from "../images/hero.png";
+import HeroImage from "../images/hero2.png";
 
 import Testimonial from "../components/Testimonials";
 import TestimonialCarousel from "../components/TestimonialCarousel";
